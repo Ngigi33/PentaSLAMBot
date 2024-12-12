@@ -1,0 +1,18 @@
+Things to note about our workspace , in the launch file display.launch edit "xacro "....make sure to add the space at the end
+
+To viewcamera images use add Image instead of camera and select /slambot/camera_images under topic 
+
+To view in website:
+sudo apt update
+sudo apt install ros-humble-web-video-server
+
+Launch the Web Video Server: Run the command:
+	ros2 run web_video_server web_video_server
+	
+Access the Web Stream: Open a web browser and navigate to:
+	http://<your-machine-ip>:8080/stream_viewer?topic=<camera_topic>
+	http://0.0.0.0:8080/stream?topic=/slambot/camera_images
+	ttp://0.0.0.0:8080
+
+Modify the Publisher:
+	ros_image = bridge.cv2_to_imgmsg(cv_image, encoding="bgr8")
